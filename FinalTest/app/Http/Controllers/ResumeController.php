@@ -69,51 +69,13 @@ class ResumeController extends Controller
     }
 
 
-    public function Display(){
+    public function index(){
       $resume =  Resume::all();
+      dd($resume);
 
     }
 
-    public function Update(Request $request){
-        // $user = Resume::where('data.resume.info.email', '='  , $request->email)->get();
-        //
-        // $data = $request->only('_id','data');
-        // $resume = $data['data']['resume'];
-        //  $user_id = $data['_id'];
-        //
-        //
-        //
-        //  $name = $resume['info']['name'];
-        //  $email = $resume['info']['email'];
-        //  $address = $resume['info']['address'];
-        //  $dob = $resume['info']['dob'];
-        //
-        //  $user->{'data.resume.info.name'} = $name;
-        //  $user->{'data.resume.info.email'} = $email;
-        //  $user->{'data.resume.info.address'} = $address;
-        //  $user->{'data.resume.info.dob'} = $dob;
-        //
-        //
-        //  $degrees = $resume['degree'];
-        //  $user->{'data.resume.degree'} = $this->getDegrees($degrees);
-        //
-        //  $internships = $resume['Internship'];
-        //  $user->{'data.resume.internship'} = $this->getInternship($internships);
-        //
-        //  $projects = $resume['project'];
-        //  $user->{'data.resume.projects'} = $this->getProjects($projects);
-        //
-        //  $positions = $resume['position'];
-        //  $user->{'data.resume.position'} = $this->getPositions($positions);
-        //
-        //
-        //  $awards = $resume['award'];
-        //  $user->{'data.resume.award'} = $this->getAwards($awards);
-        //
-        //  $hobbies = $resume['hobby'];
-        //  $user->{'data.resume.hobby'} = $this->getHobby($hobbies);
-
-         // Resume::update($user);
+    public function update(Request $request){
          Resume::where('data.resume.info.email', '='  , $request->email)->update($request->all());
          return view('welcome');
 

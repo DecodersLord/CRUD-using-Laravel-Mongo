@@ -10,11 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+use Illuminate\Support\Facades\Route;
 
 Route::post('/insert','ResumeController@store');
-Route::get('/Display','ResumeController@Display');
-Route::post('/Update','ResumeController@Update');
+Route::post('/Update','ResumeController@update');
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/Display','ResumeController@index');
+// Route::resource('resumes','ResumeController');
